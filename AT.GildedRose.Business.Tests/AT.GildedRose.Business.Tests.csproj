@@ -45,7 +45,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InventoryService.UnitTests.cs" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AT.GildedRose.Business\AT.GildedRose.Business.csproj">
+      <Project>{fcd70402-780d-46d9-96ee-ab54357369e3}</Project>
+      <Name>AT.GildedRose.Business</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
