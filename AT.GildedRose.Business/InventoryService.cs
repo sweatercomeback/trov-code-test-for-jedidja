@@ -12,7 +12,7 @@ namespace AT.GildedRose.Business
     public interface IInventoryService
     {
         IEnumerable<IInventoryItem> GetAllItems();
-        void BuyItem(IInventoryItem item);
+        bool BuyItem(IInventoryItem item);
     }
 
 
@@ -44,12 +44,23 @@ namespace AT.GildedRose.Business
             return _inventory;
         }
 
-        public void BuyItem(IInventoryItem item)
+        public bool BuyItem(IInventoryItem item)
         {
-            if (item.Quantity > 0)
-            {
-                item.Quantity--;
-            }
+            var isSuccess = false;
+
+            if (!CanBuyItem(item)) return isSuccess;
+            item.Quantity--;
+            isSuccess = true;
+
+            return isSuccess;
         }
+
+        private bool CanBuyItem(IInventoryItem item)
+        {
+            return (item.Quantity > 0);
+
+        }
+
+        
     }
 }

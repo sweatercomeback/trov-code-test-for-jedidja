@@ -17,7 +17,7 @@ namespace AT.GildedRose.Business.Tests
 	    }
 		
         [SetUp]
-		private void SetupInventory()
+		public void SetupInventory()
 		{
             _service = new InventoryMockService();
 		}
@@ -45,7 +45,7 @@ namespace AT.GildedRose.Business.Tests
 
 	    }
         [Test]
-        public void BuyItem_WhenCalledWithNoInventory_DoesNotDecrementQuantity()
+        public void BuyItem_WhenNoInventory_DoesNotDecrementQuantity()
         {
             //Assemble
             var items = _service.GetAllItems();
