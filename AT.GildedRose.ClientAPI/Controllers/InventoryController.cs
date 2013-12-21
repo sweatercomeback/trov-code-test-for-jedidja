@@ -13,10 +13,6 @@ namespace AT.GildedRose.ClientAPI.Controllers
     {
         private IInventoryService _service;
 
-        public InventoryController()
-        {
-        }
-
         public InventoryController(IInventoryService service)
         {
             _service = service;
@@ -29,7 +25,6 @@ namespace AT.GildedRose.ClientAPI.Controllers
 
         public string Post(Item item)
         {
-
             if(_service.BuyItem(item))
             {
                 return "Success";

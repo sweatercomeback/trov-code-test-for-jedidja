@@ -11,11 +11,7 @@ namespace AT.GildedRose.Business.Tests
     public class InventoryServiceTests
 	{
 	    private IInventoryService _service;
-	    public InventoryServiceTests()
-	    {
-	        _service = new InventoryMockService();
-	    }
-		
+
         [SetUp]
 		public void SetupInventory()
 		{

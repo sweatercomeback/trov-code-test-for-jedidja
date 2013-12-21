@@ -6,15 +6,11 @@ using System.Threading.Tasks;
 
 namespace AT.GildedRose.Business
 {
-    
-
-
     public interface IInventoryService
     {
         IEnumerable<IInventoryItem> GetAllItems();
         bool BuyItem(IInventoryItem item);
     }
-
 
     public class InventoryMockService : IInventoryService
     {
