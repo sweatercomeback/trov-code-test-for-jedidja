@@ -27,11 +27,10 @@ namespace AT.GildedRose.ClientAPI.Controllers
             return _service.GetAllItems();
         }
 
-        [HttpPost]
-        public string Buy(IInventoryItem item)
+        public string Post(Item item)
         {
 
-            if (_service.BuyItem(item))
+            if(_service.BuyItem(item))
             {
                 return "Success";
             }
@@ -39,7 +38,7 @@ namespace AT.GildedRose.ClientAPI.Controllers
             {
                 throw new HttpException("Unable to purchase this item!");
             }
-            
+
         }
 
     }

@@ -57,6 +57,9 @@ namespace AT.GildedRose.Business
 
         private bool CanBuyItem(IInventoryItem item)
         {
+            if (item == null)
+                return false;
+
             return (item.Quantity > 0);
 
         }

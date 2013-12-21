@@ -60,6 +60,7 @@ namespace AT.GildedRose.ClientAPI.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IInventoryService>().To<InventoryMockService>().InRequestScope();
+            kernel.Bind<IInventoryItem>().To<Item>().InRequestScope();
         }        
     }
 }

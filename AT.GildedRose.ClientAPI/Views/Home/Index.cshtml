@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-sm-6">
+        <ul data-bind="foreach: inventoryList">
+            <li>
+                <span data-bind="html: name"></span> - $<span data-bind="html: price"></span>
+                <p data-bind="html: description"></p>
+                <a href="#" class="btn btn-primary" data-bind="click: $parent.buyItem">Buy One!</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-sm-6"></div>
+</div>
